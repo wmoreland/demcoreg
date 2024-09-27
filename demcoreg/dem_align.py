@@ -306,9 +306,10 @@ def main(argv=None):
     #Iteration number
     n = 1
     #Cumulative offsets
-    dx_total = 0
-    dy_total = 0
-    dz_total = 0
+    #Can't be type float32 as json.dump does not support it
+    dx_total = np.float64(0)
+    dy_total = np.float64(0)
+    dz_total = np.float64(0)
 
     #Now iteratively update geotransform and vertical shift
     while True:
